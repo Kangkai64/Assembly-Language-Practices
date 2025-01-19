@@ -36,7 +36,7 @@ public class ConversionUnit {
     }
 
     public int getDecimalFromBinary(String userInput) {
-        int length = 0, total = 0, power = 0;
+        int length, total = 0, power = 0;
 
         length = userInput.length();
 
