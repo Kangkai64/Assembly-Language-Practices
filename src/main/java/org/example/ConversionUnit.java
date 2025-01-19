@@ -36,15 +36,15 @@ public class ConversionUnit {
     }
 
     int getDecimalFromBinary(String userInput) {
-        int value, total = 0, position = 0;
+        int length = 0, total = 0, power = 0;
 
-        long convertedLong = Long.parseLong(userInput);
+        length = userInput.length();
 
-        while (convertedLong != 0) {
-            value = (int) (convertedLong % 2) ;
-            total += value * (int) Math.pow(2, position);
-            convertedLong = convertedLong / 10;
-            position++;
+        for (int pos = length - 1; pos >= 0; pos--) {
+            if (userInput.charAt(pos) == '1') {
+                total += (int) Math.pow(2, power);
+            }
+            power++;
         }
 
         return total;
