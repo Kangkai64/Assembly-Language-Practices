@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class ConversionUnit {
     private String userInput;
 
-    ConversionUnit() {
+    public ConversionUnit() {
     }
 
-    void getNumber(Scanner scanner) {
+    public void getNumber(Scanner scanner) {
 
         System.out.print("Enter the number: ");
         userInput = scanner.nextLine().trim();
@@ -19,23 +19,23 @@ public class ConversionUnit {
         return this.userInput;
     }
 
-    boolean isBinary(String userInput) {
+    public boolean isBinary(String userInput) {
         String binary = "[01]+";
 
         return userInput.matches(binary);
     }
 
-    boolean isHex(String userInput) {
+    public boolean isHex(String userInput) {
         String hex = "[0-9a-fA-F]+";
         return userInput.matches(hex);
     }
 
-    boolean isDecimal(String userInput) {
+    public boolean isDecimal(String userInput) {
         String decimal = "[0-9]+";
         return userInput.matches(decimal);
     }
 
-    int getDecimalFromBinary(String userInput) {
+    public int getDecimalFromBinary(String userInput) {
         int length = 0, total = 0, power = 0;
 
         length = userInput.length();
@@ -50,12 +50,12 @@ public class ConversionUnit {
         return total;
     }
 
-    BigInteger getDecimalFromHexadecimal(String userInput) {
+    public BigInteger getDecimalFromHexadecimal(String userInput) {
 
         return new BigInteger(userInput, 16);
     }
 
-    String getBinaryFromDecimal(String userInput) {
+    public String getBinaryFromDecimal(String userInput) {
 
         StringBuilder binary = new StringBuilder();
         int remainder;
@@ -72,7 +72,7 @@ public class ConversionUnit {
         return binary.reverse().toString();
     }
 
-    String getHexadecimalFromDecimal(String userInput) {
+    public String getHexadecimalFromDecimal(String userInput) {
 
         StringBuilder hexadecimal = new StringBuilder();
         int remainder;
