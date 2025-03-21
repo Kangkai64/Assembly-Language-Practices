@@ -35,8 +35,9 @@ public class ConversionUnit {
         return userInput.matches(decimal);
     }
 
-    public int getDecimalFromBinary(String userInput) {
-        int length, total = 0, power = 0;
+    public long getDecimalFromBinary(String userInput) {
+        int length, power = 0;
+        long total = 0;
 
         length = userInput.length();
 
